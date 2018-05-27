@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C187A8820BB01E900A2A234 /* AccessibilityUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */; };
+		7C187A8C20BC553B00A2A234 /* GridSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */; };
+		7C187A9020BCCD5C00A2A234 /* GridSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */; };
 		7C2FD3B11FCB176C00F2372E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B01FCB176C00F2372E /* AppDelegate.swift */; };
-		7C2FD3B31FCB176C00F2372E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B21FCB176C00F2372E /* ViewController.swift */; };
+		7C2FD3B31FCB176C00F2372E /* GridSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B21FCB176C00F2372E /* GridSelectionViewController.swift */; };
 		7C2FD3B51FCB176C00F2372E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B41FCB176C00F2372E /* Assets.xcassets */; };
 		7C2FD3B81FCB176C00F2372E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B61FCB176C00F2372E /* Main.storyboard */; };
 		7C2FD3C41FCB176C00F2372E /* FenestraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FD3C31FCB176C00F2372E /* FenestraTests.swift */; };
 		7C2FD3CF1FCB176C00F2372E /* FenestraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FD3CE1FCB176C00F2372E /* FenestraUITests.swift */; };
+		7C3123B120BF8B450069A32F /* GridResizeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3123B020BF8B450069A32F /* GridResizeDelegate.swift */; };
+		AC84FC1445315AC90FBA1329 /* Pods_Fenestra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97322EB79F73F28070B0443D /* Pods_Fenestra.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityUtil.swift; sourceTree = "<group>"; };
+		7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GridSelectionView.swift; path = /Users/kevek/Development/Git/FenestraMacOs/Fenestra/Fenestra/GridSelectionView.swift; sourceTree = "<absolute>"; };
+		7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSelectionCell.swift; sourceTree = "<group>"; };
 		7C2FD3AD1FCB176C00F2372E /* Fenestra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fenestra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2FD3B01FCB176C00F2372E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7C2FD3B21FCB176C00F2372E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7C2FD3B21FCB176C00F2372E /* GridSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSelectionViewController.swift; sourceTree = "<group>"; };
 		7C2FD3B41FCB176C00F2372E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C2FD3B71FCB176C00F2372E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C2FD3B91FCB176C00F2372E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +54,10 @@
 		7C2FD3CA1FCB176C00F2372E /* FenestraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FenestraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2FD3CE1FCB176C00F2372E /* FenestraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenestraUITests.swift; sourceTree = "<group>"; };
 		7C2FD3D01FCB176C00F2372E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C3123B020BF8B450069A32F /* GridResizeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridResizeDelegate.swift; sourceTree = "<group>"; };
+		97322EB79F73F28070B0443D /* Pods_Fenestra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fenestra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23024FEFCEC2DEA8CC4491C /* Pods-Fenestra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fenestra.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fenestra/Pods-Fenestra.debug.xcconfig"; sourceTree = "<group>"; };
+		E3158CDF1375AACFAF509130 /* Pods-Fenestra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fenestra.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fenestra/Pods-Fenestra.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC84FC1445315AC90FBA1329 /* Pods_Fenestra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21900F303049232BC61B276D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B23024FEFCEC2DEA8CC4491C /* Pods-Fenestra.debug.xcconfig */,
+				E3158CDF1375AACFAF509130 /* Pods-Fenestra.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7C2FD3A41FCB176B00F2372E = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +102,8 @@
 				7C2FD3C21FCB176C00F2372E /* FenestraTests */,
 				7C2FD3CD1FCB176C00F2372E /* FenestraUITests */,
 				7C2FD3AE1FCB176C00F2372E /* Products */,
+				21900F303049232BC61B276D /* Pods */,
+				EA4395079937B85572CADE99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,11 +121,15 @@
 			isa = PBXGroup;
 			children = (
 				7C2FD3B01FCB176C00F2372E /* AppDelegate.swift */,
-				7C2FD3B21FCB176C00F2372E /* ViewController.swift */,
-				7C2FD3B41FCB176C00F2372E /* Assets.xcassets */,
+				7C3123B020BF8B450069A32F /* GridResizeDelegate.swift */,
+				7C2FD3B21FCB176C00F2372E /* GridSelectionViewController.swift */,
+				7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */,
+				7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */,
+				7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */,
 				7C2FD3B61FCB176C00F2372E /* Main.storyboard */,
-				7C2FD3B91FCB176C00F2372E /* Info.plist */,
+				7C2FD3B41FCB176C00F2372E /* Assets.xcassets */,
 				7C2FD3BA1FCB176C00F2372E /* Fenestra.entitlements */,
+				7C2FD3B91FCB176C00F2372E /* Info.plist */,
 			);
 			path = Fenestra;
 			sourceTree = "<group>";
@@ -124,6 +152,14 @@
 			path = FenestraUITests;
 			sourceTree = "<group>";
 		};
+		EA4395079937B85572CADE99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97322EB79F73F28070B0443D /* Pods_Fenestra.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C2FD3D31FCB176C00F2372E /* Build configuration list for PBXNativeTarget "Fenestra" */;
 			buildPhases = (
+				6EEAAEB0CF989DFFD41E4EC9 /* [CP] Check Pods Manifest.lock */,
 				7C2FD3A91FCB176C00F2372E /* Sources */,
 				7C2FD3AA1FCB176C00F2372E /* Frameworks */,
 				7C2FD3AB1FCB176C00F2372E /* Resources */,
+				044EDE51BBBCAFC659888833 /* [CP] Embed Pods Frameworks */,
+				4B7E0822009BD9D46D4E105E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -187,7 +226,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = CodingPanda;
 				TargetAttributes = {
 					7C2FD3AC1FCB176C00F2372E = {
@@ -252,13 +291,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		044EDE51BBBCAFC659888833 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Fenestra/Pods-Fenestra-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HotKey/HotKey.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HotKey.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fenestra/Pods-Fenestra-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B7E0822009BD9D46D4E105E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fenestra/Pods-Fenestra-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EEAAEB0CF989DFFD41E4EC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fenestra-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7C2FD3A91FCB176C00F2372E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C2FD3B31FCB176C00F2372E /* ViewController.swift in Sources */,
+				7C2FD3B31FCB176C00F2372E /* GridSelectionViewController.swift in Sources */,
+				7C187A8820BB01E900A2A234 /* AccessibilityUtil.swift in Sources */,
 				7C2FD3B11FCB176C00F2372E /* AppDelegate.swift in Sources */,
+				7C187A8C20BC553B00A2A234 /* GridSelectionView.swift in Sources */,
+				7C3123B120BF8B450069A32F /* GridResizeDelegate.swift in Sources */,
+				7C187A9020BCCD5C00A2A234 /* GridSelectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +416,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -326,6 +424,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -376,6 +475,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -383,6 +483,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -413,6 +514,7 @@
 		};
 		7C2FD3D41FCB176C00F2372E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B23024FEFCEC2DEA8CC4491C /* Pods-Fenestra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Fenestra/Fenestra.entitlements;
@@ -428,6 +530,7 @@
 		};
 		7C2FD3D51FCB176C00F2372E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3158CDF1375AACFAF509130 /* Pods-Fenestra.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Fenestra/Fenestra.entitlements;
