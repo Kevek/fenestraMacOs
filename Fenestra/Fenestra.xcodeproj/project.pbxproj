@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C162E8620C1F476001E9DF2 /* FenestraNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C162E8520C1F476001E9DF2 /* FenestraNotifications.swift */; };
 		7C187A8820BB01E900A2A234 /* AccessibilityUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */; };
 		7C187A8C20BC553B00A2A234 /* GridSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */; };
 		7C187A9020BCCD5C00A2A234 /* GridSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C162E8520C1F476001E9DF2 /* FenestraNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenestraNotifications.swift; sourceTree = "<group>"; };
 		7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityUtil.swift; sourceTree = "<group>"; };
 		7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GridSelectionView.swift; path = /Users/kevek/Development/Git/FenestraMacOs/Fenestra/Fenestra/GridSelectionView.swift; sourceTree = "<absolute>"; };
 		7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSelectionCell.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */,
 				7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */,
 				7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */,
+				7C162E8520C1F476001E9DF2 /* FenestraNotifications.swift */,
 				7C2FD3B61FCB176C00F2372E /* Main.storyboard */,
 				7C2FD3B41FCB176C00F2372E /* Assets.xcassets */,
 				7C2FD3BA1FCB176C00F2372E /* Fenestra.entitlements */,
@@ -353,6 +356,7 @@
 				7C2FD3B31FCB176C00F2372E /* GridSelectionViewController.swift in Sources */,
 				7C187A8820BB01E900A2A234 /* AccessibilityUtil.swift in Sources */,
 				7C2FD3B11FCB176C00F2372E /* AppDelegate.swift in Sources */,
+				7C162E8620C1F476001E9DF2 /* FenestraNotifications.swift in Sources */,
 				7C187A8C20BC553B00A2A234 /* GridSelectionView.swift in Sources */,
 				7C3123B120BF8B450069A32F /* GridResizeDelegate.swift in Sources */,
 				7C187A9020BCCD5C00A2A234 /* GridSelectionCell.swift in Sources */,

@@ -87,6 +87,11 @@ class GridSelectionView: NSView {
 		}
 	}
 
+	override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
+		// We don't want to have to re-claim focus if we're clicking another application before selecting its new position
+		return true;
+	}
+
 	override func mouseDown(with event: NSEvent) {
 		startPoint=convert(event.locationInWindow, from: nil);
 	}

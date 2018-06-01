@@ -55,7 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			statusButton.image = NSImage(named:NSImage.Name("FenestraStatusBarIcon"));
 		}
 
-		NotificationCenter.default.addObserver(forName: Notification.Name("CloseFenestraGridSelectionWindows"), object: nil, queue: nil) { [weak self] (notification) in
+		NotificationCenter.default.addObserver(forName: Notification.Name.fenestraSelectionComplete, object: nil, queue: nil) { [weak self] (notification) in
 			self?.closeGridSelectionWindows();
 		}
 
@@ -95,6 +95,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			}
 			setExtraWindowProperties(window: windowController.window, screen: screen);
 			windows.append(windowController);
+		}
+		for window in windows {
+			window?.showWindow(self);
 		}
 	}
 

@@ -7,10 +7,10 @@
 //
 
 import Cocoa
-import AppKit
 
 class GridSelectionViewController: NSViewController, GridResizeDelegate {
 	@IBOutlet weak var frontmostApplicationName: NSTextField!;
+	@IBOutlet weak var frontmostApplicationIcon: NSImageView!;
 	@IBOutlet weak var gridSelectionView: GridSelectionView!;
 
 	var screen: NSScreen? = nil;
@@ -48,7 +48,9 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 			let newPosition=CGPoint(x:newXPosition, y:newYPosition);
 
 			resizeWindow(position: newPosition, size: newSize);
-			NotificationCenter.default.post(name: Notification.Name("CloseFenestraGridSelectionWindows"), object: nil);
+			// Return focus to the frontmostApplication we've moved (from Fenestra)
+			frontmostApplication?.activate(options: []);
+			NotificationCenter.default.post(name: Notification.Name.fenestraSelectionComplete, object: nil);
 		}
 	}
 
@@ -65,12 +67,12 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 			let frontmostWindowElement=frontmostWindow as! AXUIElement
 			var error = AXUIElementSetAttributeValue(frontmostWindowElement, positionAttribute, AccessibilityUtil.wrapAXValue(position as AnyObject).axValue)
 			guard error == .success else {
-				// throw error
+				// TODO: throw error
 				return;
 			}
 			error=AXUIElementSetAttributeValue(frontmostWindowElement, sizeAttribute, AccessibilityUtil.wrapAXValue(size as AnyObject).axValue)
 			guard error == .success else {
-				// throw error
+				// TODO: throw error
 				return;
 			}
 		}
@@ -85,15 +87,12 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 	}
 
 	func updateFrontmostApplicationInfo() {
-		let name=frontmostApplication?.localizedName ?? "None";
-		frontmostApplicationName?.stringValue = name;
+		let name=frontmostApplication?.localizedName ?? "Unknown - Fenestra Unable To Load Frontmost Application Data";
+		frontmostApplicationIcon?.image=frontmostApplication?.icon
+		frontmostApplicationName?.stringValue=name;
 	}
 
-//	override func viewDidDisappear() {
-//		<#code#>
-//	}
-
 	deinit {
-		NotificationCenter.default.removeObserver(self);
+		NSWorkspace.shared.notificationCenter.removeObserver(self);
 	}
 }
