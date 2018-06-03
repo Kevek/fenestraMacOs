@@ -30,9 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				return;
 			}
 			hotKey.keyDownHandler = { [weak self] in
-				for window in (self?.windows)! {
-					window?.close();
-				}
+				self?.closeGridSelectionWindows();
 			}
 		}
 	}
@@ -61,7 +59,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 		createStatusItemMenu();
 		openGridSelectionWindowHotKey = HotKey(keyCombo: KeyCombo(key: .d, modifiers: [.command, .shift]));
-		closeOutstandingWindowsHotKey = HotKey(keyCombo: KeyCombo(key: .escape));
 	}
 
 	func createStatusItemMenu() {
@@ -81,14 +78,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	func openGridSelectionWindows() {
-		closeGridSelectionWindows()
-		let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+		closeGridSelectionWindows();
 		let frontmostApplication=NSWorkspace.shared.frontmostApplication;
+		let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
 		for screen in NSScreen.screens {
 			guard let windowController = storyboard.instantiateController(withIdentifier:NSStoryboard.SceneIdentifier("FenestraGridSelectionWindowConroller")) as? NSWindowController else {
 				fatalError("Error getting main window controller")
 			}
-			windowController.window?.makeKeyAndOrderFront(nil);
 			if let gridSelection = windowController.contentViewController as? GridSelectionViewController {
 				gridSelection.screen=screen;
 				gridSelection.frontmostApplication=frontmostApplication;
@@ -99,6 +95,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		for window in windows {
 			window?.showWindow(self);
 		}
+		closeOutstandingWindowsHotKey = HotKey(keyCombo: KeyCombo(key: .escape));
 	}
 
 	func closeGridSelectionWindows() {
@@ -106,6 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			window?.close();
 		}
 		windows.removeAll();
+		closeOutstandingWindowsHotKey=nil;
 	}
 
 	func setExtraWindowProperties(window:NSWindow?, screen:NSScreen) {
