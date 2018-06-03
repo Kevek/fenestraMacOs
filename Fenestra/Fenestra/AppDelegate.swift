@@ -74,7 +74,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	@objc func openSettings() {
-		// TODO: Temp; do nothing
+		let storyboard = NSStoryboard(name: NSStoryboard.Name("Settings"), bundle: nil)
+		guard let windowController = storyboard.instantiateController(withIdentifier:NSStoryboard.SceneIdentifier("FenestraSettingsWindowController")) as? NSWindowController else {
+			fatalError("Error getting main window controller")
+		}
+		if let settings = windowController.contentViewController as? SettingsViewController {}
+		windowController.showWindow(self);
 	}
 
 	func openGridSelectionWindows() {
@@ -115,12 +120,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let frameOrigin=NSPoint(x: screen.visibleFrame.midX - (window?.frame.width ?? 0) / 2, y: screen.visibleFrame.midY - (window?.frame.height ?? 0) / 2);
 		window?.setFrameOrigin(frameOrigin);
 
-
-		//		window?.backgroundColor = .clear;
-		////		window.titlebarAppearsTransparent=true;
-		////		window.titleVisibility = .hidden;
+		window?.backgroundColor = .clear;
+		window?.titlebarAppearsTransparent = true;
+		window?.titleVisibility = .hidden;
 		let hideWindowButtons: [NSWindow.ButtonType] = [.miniaturizeButton,
-																										.zoomButton];
+																										.zoomButton,
+																										.closeButton ];
 		hideWindowButtons.forEach({
 			window?.standardWindowButton($0)?.isHidden=true;
 		})

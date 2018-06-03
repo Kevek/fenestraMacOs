@@ -26,6 +26,14 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 
 		NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(newApplicationSelected), name: NSWorkspace.didActivateApplicationNotification, object: nil)
 
+		view.wantsLayer=true;
+		view.layer?.borderWidth=2;
+		view.layer?.borderColor=NSColor.fenestraBorderColor.cgColor;
+		view.layer?.cornerRadius=8;
+		view.layer?.backgroundColor=NSColor.fenestraBackgroundColor.cgColor;
+
+		frontmostApplicationName?.textColor=NSColor.fenestraTextColor;
+
 		gridSelectionView.gridResizeDelegate=self;
 	}
 
@@ -91,7 +99,7 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 		frontmostApplicationIcon?.image=frontmostApplication?.icon
 		frontmostApplicationName?.stringValue=name;
 	}
-
+	
 	deinit {
 		NSWorkspace.shared.notificationCenter.removeObserver(self);
 	}

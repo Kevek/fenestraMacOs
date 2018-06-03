@@ -63,7 +63,7 @@ class GridSelectionView: NSView {
 		for cell in grid {
 			let path = NSBezierPath();
 			path.lineWidth=borderWidth;
-			NSColor.black.set();
+			NSColor.fenestraBorderColor.set();
 			path.appendRoundedRect(cell.rect, xRadius: cornerRadius, yRadius: cornerRadius);
 			path.stroke();
 			if selectionRect != nil && (selectionRect?.intersects(cell.rect) ?? false || selectionRect?.contains(cell.rect) ?? false) {
@@ -73,17 +73,19 @@ class GridSelectionView: NSView {
 				if maxSelectedCell==nil || cell>maxSelectedCell! {
 					maxSelectedCell=cell;
 				}
-				NSColor.yellow.set();
+				NSColor.fenestraSelectedCell.set();
 				path.fill()
 			}
 		}
 
 		if selectionRect != nil {
-			NSColor.blue.set();
+			NSColor.fenestraSelectionBorder.set();
 			let path = NSBezierPath();
 			path.lineWidth=borderWidth;
 			path.appendRoundedRect(selectionRect!, xRadius: cornerRadius, yRadius: cornerRadius);
 			path.stroke();
+			NSColor.fenestraSelectionFill.set();
+			path.fill()
 		}
 	}
 
