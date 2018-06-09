@@ -37,15 +37,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	var windows : [NSWindowController?] = [];
 
-
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Check if we're authorized for the Accessibility API
 		if (!AccessibilityUtil.isTrustedAccessibilityProcess(showPrompt: true)) {
-			let alert = NSAlert.init()
-			alert.messageText = "Accessibility Permission Required"
-			alert.informativeText = "Fenestra requires access to Accessability to move and resize windows.\n\nPlease give Fenestra access in System Preferences -> Security & Privacy -> Privacy -> Accessibility.\n\nPlease relaunch Fenestra once access has been granted."
-			alert.addButton(withTitle: "OK")
-			alert.runModal()
+			let alert = NSAlert.init();
+			alert.messageText = "Accessibility Permission Required";
+			alert.informativeText = "Fenestra requires access to Accessability to move and resize windows.\n\nPlease give Fenestra access in System Preferences -> Security & Privacy -> Privacy -> Accessibility.\n\nPlease relaunch Fenestra once access has been granted.";
+			alert.addButton(withTitle: "OK");
+			alert.runModal();
 			exit(-1);
 		}
 
@@ -56,16 +55,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		NotificationCenter.default.addObserver(forName: Notification.Name.fenestraSelectionComplete, object: nil, queue: nil) { [weak self] (notification) in
 			self?.closeGridSelectionWindows();
 		}
+		NotificationCenter.default.addObserver(forName: Notification.Name.fenestraPreferencesOnClosed, object: nil, queue: nil) { 			[weak self] (notification) in
+			self?.setUpGridSelectionHotKey();
+		}
 
 		createStatusItemMenu();
-		openGridSelectionWindowHotKey = HotKey(keyCombo: KeyCombo(key: .d, modifiers: [.command, .shift]));
+		setUpGridSelectionHotKey();
 	}
 
 	func createStatusItemMenu() {
 		let statusItemMenu = NSMenu();
-		statusItemMenu.addItem(NSMenuItem(title: "Settings",
-																			action: #selector(openSettings),
-																			keyEquivalent: ""));
+		statusItemMenu.addItem(NSMenuItem(title: "Preferences",
+																			action: #selector(openPreferences),
+																			keyEquivalent: ","));
 		statusItemMenu.addItem(NSMenuItem.separator());
 		statusItemMenu.addItem(NSMenuItem(title: "Quit Fenestra",
 																			action: #selector(NSApplication.terminate(_:)),
@@ -73,19 +75,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		statusItem.menu = statusItemMenu;
 	}
 
-	@objc func openSettings() {
-		let storyboard = NSStoryboard(name: NSStoryboard.Name("Settings"), bundle: nil)
-		guard let windowController = storyboard.instantiateController(withIdentifier:NSStoryboard.SceneIdentifier("FenestraSettingsWindowController")) as? NSWindowController else {
-			fatalError("Error getting main window controller")
+	@objc func openPreferences() {
+		openGridSelectionWindowHotKey=nil;
+		let storyboard = NSStoryboard(name: NSStoryboard.Name("Preferences"), bundle: nil);
+		guard let windowController = storyboard.instantiateController(withIdentifier:NSStoryboard.SceneIdentifier("FenestraPreferencesWindowController")) as? NSWindowController else {
+			fatalError("Error getting preferences window controller")
 		}
-		if let settings = windowController.contentViewController as? SettingsViewController {}
+		if let settings = windowController.contentViewController as? PreferencesViewController {
+			windowController.window?.delegate=settings;
+		}
 		windowController.showWindow(self);
+		windowController.window?.makeKeyAndOrderFront(self);
+	}
+
+	func setUpGridSelectionHotKey() {
+		let data=NSUbiquitousKeyValueStore.default.dictionary(forKey: FenestraPreferences.preferences.rawValue);
+		let keyCombo=KeyCombo(dictionary: (data?["hotkeyCombo"] as? [String: Any] ?? KeyCombo(key: .d, modifiers: [.command, .shift]).dictionary))
+		openGridSelectionWindowHotKey = HotKey(keyCombo: keyCombo!);
 	}
 
 	func openGridSelectionWindows() {
 		closeGridSelectionWindows();
 		let frontmostApplication=NSWorkspace.shared.frontmostApplication;
-		let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+		let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil);
 		for screen in NSScreen.screens {
 			guard let windowController = storyboard.instantiateController(withIdentifier:NSStoryboard.SceneIdentifier("FenestraGridSelectionWindowConroller")) as? NSWindowController else {
 				fatalError("Error getting main window controller")
@@ -94,7 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				gridSelection.screen=screen;
 				gridSelection.frontmostApplication=frontmostApplication;
 			}
-			setExtraWindowProperties(window: windowController.window, screen: screen);
+			setExtraGridSelectionWindowProperties(window: windowController.window, screen: screen);
 			windows.append(windowController);
 		}
 		for window in windows {
@@ -103,31 +115,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		closeOutstandingWindowsHotKey = HotKey(keyCombo: KeyCombo(key: .escape));
 	}
 
+	func setExtraGridSelectionWindowProperties(window:NSWindow?, screen:NSScreen) {
+		window?.level = .floating;
+		window?.hasShadow = false;
+		window?.isOpaque = false;
+		window?.isMovable = false;
+		window?.backgroundColor = NSColor.fenestraBackgroundColor;
+
+		let frameOrigin=NSPoint(x: screen.visibleFrame.midX - (window?.frame.width ?? 0) / 2, y: screen.visibleFrame.midY - (window?.frame.height ?? 0) / 2);
+		window?.setFrameOrigin(frameOrigin);
+
+		window?.titlebarAppearsTransparent = true;
+		window?.titleVisibility = .hidden;
+		window?.standardWindowButton(.miniaturizeButton)?.isHidden=true;
+		window?.standardWindowButton(.zoomButton)?.isHidden=true;
+	}
+
 	func closeGridSelectionWindows() {
 		for window in windows {
 			window?.close();
 		}
 		windows.removeAll();
 		closeOutstandingWindowsHotKey=nil;
-	}
-
-	func setExtraWindowProperties(window:NSWindow?, screen:NSScreen) {
-		window?.level = .floating;
-		window?.hasShadow = false;
-		window?.isOpaque = false;
-		window?.isMovable = false;
-
-		let frameOrigin=NSPoint(x: screen.visibleFrame.midX - (window?.frame.width ?? 0) / 2, y: screen.visibleFrame.midY - (window?.frame.height ?? 0) / 2);
-		window?.setFrameOrigin(frameOrigin);
-
-		window?.backgroundColor = .clear;
-		window?.titlebarAppearsTransparent = true;
-		window?.titleVisibility = .hidden;
-		let hideWindowButtons: [NSWindow.ButtonType] = [.miniaturizeButton,
-																										.zoomButton,
-																										.closeButton ];
-		hideWindowButtons.forEach({
-			window?.standardWindowButton($0)?.isHidden=true;
-		})
 	}
 }

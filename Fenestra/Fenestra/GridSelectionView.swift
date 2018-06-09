@@ -60,6 +60,8 @@ class GridSelectionView: NSView {
 			selectionRect=NSRect(x: x, y: y, width: width, height: height);
 		}
 
+		minSelectedCell=nil;
+		maxSelectedCell=nil;
 		for cell in grid {
 			let path = NSBezierPath();
 			path.lineWidth=borderWidth;
@@ -124,9 +126,5 @@ class GridSelectionView: NSView {
 		let screenHeightPercent=(maxRow-minRow+1)/numRows;
 
 		gridResizeDelegate!.resizeGrid(xOriginPercent: xOriginPercent, yOriginPercent: yOriginPercent, screenWidthPercent: screenWidthPercent, screenHeightPercent: screenHeightPercent);
-
-		// TODO: Temp: Resetting for debugging purposes...
-		self.minSelectedCell=nil;
-		self.maxSelectedCell=nil;
 	}
 }

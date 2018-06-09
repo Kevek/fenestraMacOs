@@ -26,19 +26,16 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 
 		NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(newApplicationSelected), name: NSWorkspace.didActivateApplicationNotification, object: nil)
 
-		view.wantsLayer=true;
-		view.layer?.borderWidth=2;
-		view.layer?.borderColor=NSColor.fenestraBorderColor.cgColor;
-		view.layer?.cornerRadius=8;
-		view.layer?.backgroundColor=NSColor.fenestraBackgroundColor.cgColor;
-
 		frontmostApplicationName?.textColor=NSColor.fenestraTextColor;
 
 		gridSelectionView.gridResizeDelegate=self;
 	}
 
 	func getSelectionGridSize() -> (numRows: Int, numColumns: Int) {
-		return (6, 6);
+		let data=NSUbiquitousKeyValueStore.default.dictionary(forKey: FenestraPreferences.preferences.rawValue);
+		let numberOfRows=data?["numberOfRows"] as? Int ?? 6;
+		let numberOfColumns=data?["numberOfColumns"] as? Int ?? 6;
+		return (numberOfRows, numberOfColumns);
 	}
 
 	func resizeGrid(xOriginPercent: Double, yOriginPercent: Double, screenWidthPercent: Double, screenHeightPercent: Double) {
@@ -52,7 +49,12 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 
 			let newXPosition=visibleFrame.origin.x + CGFloat(xOriginPercent) * visibleWidth;
 			// Unfortunately NSViews use a coordinate system where (0,0) is in the bottom-left, whereas NSScreens use a coordinate system where (0,0) is in the top-left so this is transforming for this
-			let newYPosition=visibleFrame.origin.y + visibleHeight - newHeight - (visibleHeight*CGFloat(yOriginPercent));
+			let newYOriginPercent=1-(screenHeightPercent+yOriginPercent);
+			var newYPosition=visibleFrame.origin.y + CGFloat(newYOriginPercent) * visibleHeight;
+			if (newYPosition != 0) {
+				// HACK --  I haven't yet figured out why, this seems to fix the positioning for non-zero y-values.
+				newYPosition+=24;
+			}
 			let newPosition=CGPoint(x:newXPosition, y:newYPosition);
 
 			resizeWindow(position: newPosition, size: newSize);
@@ -69,18 +71,18 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 			let positionAttribute=kAXPositionAttribute as CFString;
 			let sizeAttribute=kAXSizeAttribute as CFString;
 
-			var frontmostWindow: AnyObject?;
 			let axApplication=AXUIElementCreateApplication(pid);
+			var frontmostWindow: AnyObject?;
 			AXUIElementCopyAttributeValue(axApplication, focusedWindowAttribute, &frontmostWindow);
 			let frontmostWindowElement=frontmostWindow as! AXUIElement
 			var error = AXUIElementSetAttributeValue(frontmostWindowElement, positionAttribute, AccessibilityUtil.wrapAXValue(position as AnyObject).axValue)
 			guard error == .success else {
-				// TODO: throw error
+				print("Error while setting new window position: \(error)");
 				return;
 			}
 			error=AXUIElementSetAttributeValue(frontmostWindowElement, sizeAttribute, AccessibilityUtil.wrapAXValue(size as AnyObject).axValue)
 			guard error == .success else {
-				// TODO: throw error
+				print("Error while setting new window size: \(error)");
 				return;
 			}
 		}
@@ -98,6 +100,12 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 		let name=frontmostApplication?.localizedName ?? "Unknown - Fenestra Unable To Load Frontmost Application Data";
 		frontmostApplicationIcon?.image=frontmostApplication?.icon
 		frontmostApplicationName?.stringValue=name;
+	}
+
+	override func viewWillDisappear() {
+		// Ensure any other screen's grid selections are closed
+		NotificationCenter.default.post(name: Notification.Name.fenestraSelectionComplete, object: nil);
+		super.viewDidDisappear();
 	}
 	
 	deinit {
