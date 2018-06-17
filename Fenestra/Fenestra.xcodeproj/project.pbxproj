@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7C162E8820C2022F001E9DF2 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C162E8720C2022F001E9DF2 /* PreferencesViewController.swift */; };
-		7C162E8A20C20D8B001E9DF2 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C162E8920C20D8B001E9DF2 /* Preferences.storyboard */; };
-		7C162E8C20C47195001E9DF2 /* FenestraConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C162E8B20C47195001E9DF2 /* FenestraConstants.swift */; };
 		7C187A8820BB01E900A2A234 /* AccessibilityUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */; };
 		7C187A8C20BC553B00A2A234 /* GridSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */; };
 		7C187A9020BCCD5C00A2A234 /* GridSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */; };
@@ -17,35 +15,56 @@
 		7C2FD3B31FCB176C00F2372E /* GridSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B21FCB176C00F2372E /* GridSelectionViewController.swift */; };
 		7C2FD3B51FCB176C00F2372E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B41FCB176C00F2372E /* Assets.xcassets */; };
 		7C2FD3B81FCB176C00F2372E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B61FCB176C00F2372E /* Main.storyboard */; };
-		7C2FD3C41FCB176C00F2372E /* FenestraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FD3C31FCB176C00F2372E /* FenestraTests.swift */; };
-		7C2FD3CF1FCB176C00F2372E /* FenestraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FD3CE1FCB176C00F2372E /* FenestraUITests.swift */; };
 		7C3123B120BF8B450069A32F /* GridResizeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3123B020BF8B450069A32F /* GridResizeDelegate.swift */; };
 		7C337FE920CC70D3007FBB12 /* HotKeySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C337FE820CC70D2007FBB12 /* HotKeySelectionView.swift */; };
-		7C7B954520CD6B8C00B08330 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7B954420CD6B8C00B08330 /* Utils.swift */; };
+		7C713A1220D6C77B003AFD60 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C713A1020D6C77B003AFD60 /* Preferences.storyboard */; };
+		7C713A1420D71B97003AFD60 /* FenestraCommonLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC5408D20D6B31800B1B00C /* FenestraCommonLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CC5400D20D69AB200B1B00C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5400C20D69AB200B1B00C /* AppDelegate.swift */; };
+		7CC5401120D69AB400B1B00C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CC5401020D69AB400B1B00C /* Assets.xcassets */; };
+		7CC5401420D69AB400B1B00C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC5401220D69AB400B1B00C /* Main.storyboard */; };
+		7CC5401C20D6AB4500B1B00C /* FenestraLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7CC5400A20D69AB200B1B00C /* FenestraLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7CC5401E20D6AB5E00B1B00C /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC5401D20D6AB5E00B1B00C /* ServiceManagement.framework */; };
+		7CC5409220D6B36100B1B00C /* FenestraCommonLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC5408D20D6B31800B1B00C /* FenestraCommonLib.framework */; };
+		7CC5409320D6B36F00B1B00C /* FenestraCommonLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC5408D20D6B31800B1B00C /* FenestraCommonLib.framework */; };
 		AC84FC1445315AC90FBA1329 /* Pods_Fenestra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97322EB79F73F28070B0443D /* Pods_Fenestra.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7C2FD3C01FCB176C00F2372E /* PBXContainerItemProxy */ = {
+		7CC5408C20D6B31800B1B00C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7C2FD3A51FCB176C00F2372E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7C2FD3AC1FCB176C00F2372E;
-			remoteInfo = Fenestra;
-		};
-		7C2FD3CB1FCB176C00F2372E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7C2FD3A51FCB176C00F2372E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7C2FD3AC1FCB176C00F2372E;
-			remoteInfo = Fenestra;
+			containerPortal = 7CC5408820D6B31700B1B00C /* FenestraCommonLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7CC5407D20D6B31700B1B00C;
+			remoteInfo = FenestraCommonLib;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7CC5401B20D6AB2900B1B00C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				7CC5401C20D6AB4500B1B00C /* FenestraLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CC5403D20D6AFD000B1B00C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7C713A1420D71B97003AFD60 /* FenestraCommonLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7C162E8720C2022F001E9DF2 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		7C162E8920C20D8B001E9DF2 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
-		7C162E8B20C47195001E9DF2 /* FenestraConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenestraConstants.swift; sourceTree = "<group>"; };
 		7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityUtil.swift; sourceTree = "<group>"; };
 		7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GridSelectionView.swift; path = /Users/kevek/Development/Git/FenestraMacOs/Fenestra/Fenestra/GridSelectionView.swift; sourceTree = "<absolute>"; };
 		7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSelectionCell.swift; sourceTree = "<group>"; };
@@ -56,15 +75,17 @@
 		7C2FD3B71FCB176C00F2372E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C2FD3B91FCB176C00F2372E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C2FD3BA1FCB176C00F2372E /* Fenestra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fenestra.entitlements; sourceTree = "<group>"; };
-		7C2FD3BF1FCB176C00F2372E /* FenestraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FenestraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C2FD3C31FCB176C00F2372E /* FenestraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenestraTests.swift; sourceTree = "<group>"; };
-		7C2FD3C51FCB176C00F2372E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C2FD3CA1FCB176C00F2372E /* FenestraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FenestraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C2FD3CE1FCB176C00F2372E /* FenestraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenestraUITests.swift; sourceTree = "<group>"; };
-		7C2FD3D01FCB176C00F2372E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C3123B020BF8B450069A32F /* GridResizeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridResizeDelegate.swift; sourceTree = "<group>"; };
 		7C337FE820CC70D2007FBB12 /* HotKeySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeySelectionView.swift; sourceTree = "<group>"; };
-		7C7B954420CD6B8C00B08330 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		7C713A1020D6C77B003AFD60 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		7CC5400A20D69AB200B1B00C /* FenestraLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FenestraLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CC5400C20D69AB200B1B00C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7CC5401020D69AB400B1B00C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7CC5401320D69AB400B1B00C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7CC5401520D69AB400B1B00C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CC5401620D69AB400B1B00C /* FenestraLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FenestraLauncher.entitlements; sourceTree = "<group>"; };
+		7CC5401D20D6AB5E00B1B00C /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		7CC5408820D6B31700B1B00C /* FenestraCommonLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FenestraCommonLib.xcodeproj; path = FenestraCommonLib/FenestraCommonLib.xcodeproj; sourceTree = "<group>"; };
 		97322EB79F73F28070B0443D /* Pods_Fenestra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fenestra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23024FEFCEC2DEA8CC4491C /* Pods-Fenestra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fenestra.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fenestra/Pods-Fenestra.debug.xcconfig"; sourceTree = "<group>"; };
 		E3158CDF1375AACFAF509130 /* Pods-Fenestra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fenestra.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fenestra/Pods-Fenestra.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,21 +96,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC5409220D6B36100B1B00C /* FenestraCommonLib.framework in Frameworks */,
+				7CC5401E20D6AB5E00B1B00C /* ServiceManagement.framework in Frameworks */,
 				AC84FC1445315AC90FBA1329 /* Pods_Fenestra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C2FD3BC1FCB176C00F2372E /* Frameworks */ = {
+		7CC5400720D69AB200B1B00C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7C2FD3C71FCB176C00F2372E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				7CC5409320D6B36F00B1B00C /* FenestraCommonLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,8 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				7C2FD3AF1FCB176C00F2372E /* Fenestra */,
-				7C2FD3C21FCB176C00F2372E /* FenestraTests */,
-				7C2FD3CD1FCB176C00F2372E /* FenestraUITests */,
+				7CC5400B20D69AB200B1B00C /* FenestraLauncher */,
+				7CC5408820D6B31700B1B00C /* FenestraCommonLib.xcodeproj */,
 				7C2FD3AE1FCB176C00F2372E /* Products */,
 				21900F303049232BC61B276D /* Pods */,
 				EA4395079937B85572CADE99 /* Frameworks */,
@@ -121,8 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				7C2FD3AD1FCB176C00F2372E /* Fenestra.app */,
-				7C2FD3BF1FCB176C00F2372E /* FenestraTests.xctest */,
-				7C2FD3CA1FCB176C00F2372E /* FenestraUITests.xctest */,
+				7CC5400A20D69AB200B1B00C /* FenestraLauncher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,10 +154,8 @@
 				7C2FD3B61FCB176C00F2372E /* Main.storyboard */,
 				7C162E8720C2022F001E9DF2 /* PreferencesViewController.swift */,
 				7C337FE820CC70D2007FBB12 /* HotKeySelectionView.swift */,
-				7C162E8920C20D8B001E9DF2 /* Preferences.storyboard */,
+				7C713A1020D6C77B003AFD60 /* Preferences.storyboard */,
 				7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */,
-				7C162E8B20C47195001E9DF2 /* FenestraConstants.swift */,
-				7C7B954420CD6B8C00B08330 /* Utils.swift */,
 				7C2FD3B41FCB176C00F2372E /* Assets.xcassets */,
 				7C2FD3BA1FCB176C00F2372E /* Fenestra.entitlements */,
 				7C2FD3B91FCB176C00F2372E /* Info.plist */,
@@ -149,27 +163,30 @@
 			path = Fenestra;
 			sourceTree = "<group>";
 		};
-		7C2FD3C21FCB176C00F2372E /* FenestraTests */ = {
+		7CC5400B20D69AB200B1B00C /* FenestraLauncher */ = {
 			isa = PBXGroup;
 			children = (
-				7C2FD3C31FCB176C00F2372E /* FenestraTests.swift */,
-				7C2FD3C51FCB176C00F2372E /* Info.plist */,
+				7CC5400C20D69AB200B1B00C /* AppDelegate.swift */,
+				7CC5401020D69AB400B1B00C /* Assets.xcassets */,
+				7CC5401220D69AB400B1B00C /* Main.storyboard */,
+				7CC5401520D69AB400B1B00C /* Info.plist */,
+				7CC5401620D69AB400B1B00C /* FenestraLauncher.entitlements */,
 			);
-			path = FenestraTests;
+			path = FenestraLauncher;
 			sourceTree = "<group>";
 		};
-		7C2FD3CD1FCB176C00F2372E /* FenestraUITests */ = {
+		7CC5408920D6B31700B1B00C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C2FD3CE1FCB176C00F2372E /* FenestraUITests.swift */,
-				7C2FD3D01FCB176C00F2372E /* Info.plist */,
+				7CC5408D20D6B31800B1B00C /* FenestraCommonLib.framework */,
 			);
-			path = FenestraUITests;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		EA4395079937B85572CADE99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CC5401D20D6AB5E00B1B00C /* ServiceManagement.framework */,
 				97322EB79F73F28070B0443D /* Pods_Fenestra.framework */,
 			);
 			name = Frameworks;
@@ -186,8 +203,10 @@
 				7C2FD3A91FCB176C00F2372E /* Sources */,
 				7C2FD3AA1FCB176C00F2372E /* Frameworks */,
 				7C2FD3AB1FCB176C00F2372E /* Resources */,
+				7CC5401B20D6AB2900B1B00C /* CopyFiles */,
 				044EDE51BBBCAFC659888833 /* [CP] Embed Pods Frameworks */,
 				4B7E0822009BD9D46D4E105E /* [CP] Copy Pods Resources */,
+				7CC5403D20D6AFD000B1B00C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,41 +217,22 @@
 			productReference = 7C2FD3AD1FCB176C00F2372E /* Fenestra.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7C2FD3BE1FCB176C00F2372E /* FenestraTests */ = {
+		7CC5400920D69AB200B1B00C /* FenestraLauncher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C2FD3D61FCB176C00F2372E /* Build configuration list for PBXNativeTarget "FenestraTests" */;
+			buildConfigurationList = 7CC5401920D69AB400B1B00C /* Build configuration list for PBXNativeTarget "FenestraLauncher" */;
 			buildPhases = (
-				7C2FD3BB1FCB176C00F2372E /* Sources */,
-				7C2FD3BC1FCB176C00F2372E /* Frameworks */,
-				7C2FD3BD1FCB176C00F2372E /* Resources */,
+				7CC5400620D69AB200B1B00C /* Sources */,
+				7CC5400720D69AB200B1B00C /* Frameworks */,
+				7CC5400820D69AB200B1B00C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7C2FD3C11FCB176C00F2372E /* PBXTargetDependency */,
 			);
-			name = FenestraTests;
-			productName = FenestraTests;
-			productReference = 7C2FD3BF1FCB176C00F2372E /* FenestraTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		7C2FD3C91FCB176C00F2372E /* FenestraUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7C2FD3D91FCB176C00F2372E /* Build configuration list for PBXNativeTarget "FenestraUITests" */;
-			buildPhases = (
-				7C2FD3C61FCB176C00F2372E /* Sources */,
-				7C2FD3C71FCB176C00F2372E /* Frameworks */,
-				7C2FD3C81FCB176C00F2372E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7C2FD3CC1FCB176C00F2372E /* PBXTargetDependency */,
-			);
-			name = FenestraUITests;
-			productName = FenestraUITests;
-			productReference = 7C2FD3CA1FCB176C00F2372E /* FenestraUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = FenestraLauncher;
+			productName = FenestraLauncher;
+			productReference = 7CC5400A20D69AB200B1B00C /* FenestraLauncher.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -240,7 +240,7 @@
 		7C2FD3A51FCB176C00F2372E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = CodingPanda;
 				TargetAttributes = {
@@ -248,15 +248,9 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
-					7C2FD3BE1FCB176C00F2372E = {
-						CreatedOnToolsVersion = 9.1;
+					7CC5400920D69AB200B1B00C = {
+						CreatedOnToolsVersion = 9.3.1;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 7C2FD3AC1FCB176C00F2372E;
-					};
-					7C2FD3C91FCB176C00F2372E = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 7C2FD3AC1FCB176C00F2372E;
 					};
 				};
 			};
@@ -271,37 +265,47 @@
 			mainGroup = 7C2FD3A41FCB176B00F2372E;
 			productRefGroup = 7C2FD3AE1FCB176C00F2372E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7CC5408920D6B31700B1B00C /* Products */;
+					ProjectRef = 7CC5408820D6B31700B1B00C /* FenestraCommonLib.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7C2FD3AC1FCB176C00F2372E /* Fenestra */,
-				7C2FD3BE1FCB176C00F2372E /* FenestraTests */,
-				7C2FD3C91FCB176C00F2372E /* FenestraUITests */,
+				7CC5400920D69AB200B1B00C /* FenestraLauncher */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7CC5408D20D6B31800B1B00C /* FenestraCommonLib.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FenestraCommonLib.framework;
+			remoteRef = 7CC5408C20D6B31800B1B00C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7C2FD3AB1FCB176C00F2372E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C162E8A20C20D8B001E9DF2 /* Preferences.storyboard in Resources */,
+				7C713A1220D6C77B003AFD60 /* Preferences.storyboard in Resources */,
 				7C2FD3B51FCB176C00F2372E /* Assets.xcassets in Resources */,
 				7C2FD3B81FCB176C00F2372E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C2FD3BD1FCB176C00F2372E /* Resources */ = {
+		7CC5400820D69AB200B1B00C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7C2FD3C81FCB176C00F2372E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				7CC5401120D69AB400B1B00C /* Assets.xcassets in Resources */,
+				7CC5401420D69AB400B1B00C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,50 +375,35 @@
 				7C2FD3B11FCB176C00F2372E /* AppDelegate.swift in Sources */,
 				7C337FE920CC70D3007FBB12 /* HotKeySelectionView.swift in Sources */,
 				7C187A8C20BC553B00A2A234 /* GridSelectionView.swift in Sources */,
-				7C7B954520CD6B8C00B08330 /* Utils.swift in Sources */,
 				7C3123B120BF8B450069A32F /* GridResizeDelegate.swift in Sources */,
 				7C187A9020BCCD5C00A2A234 /* GridSelectionCell.swift in Sources */,
 				7C162E8820C2022F001E9DF2 /* PreferencesViewController.swift in Sources */,
-				7C162E8C20C47195001E9DF2 /* FenestraConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C2FD3BB1FCB176C00F2372E /* Sources */ = {
+		7CC5400620D69AB200B1B00C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C2FD3C41FCB176C00F2372E /* FenestraTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7C2FD3C61FCB176C00F2372E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7C2FD3CF1FCB176C00F2372E /* FenestraUITests.swift in Sources */,
+				7CC5400D20D69AB200B1B00C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7C2FD3C11FCB176C00F2372E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7C2FD3AC1FCB176C00F2372E /* Fenestra */;
-			targetProxy = 7C2FD3C01FCB176C00F2372E /* PBXContainerItemProxy */;
-		};
-		7C2FD3CC1FCB176C00F2372E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7C2FD3AC1FCB176C00F2372E /* Fenestra */;
-			targetProxy = 7C2FD3CB1FCB176C00F2372E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7C2FD3B61FCB176C00F2372E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7C2FD3B71FCB176C00F2372E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7CC5401220D69AB400B1B00C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CC5401320D69AB400B1B00C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -536,14 +525,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B23024FEFCEC2DEA8CC4491C /* Pods-Fenestra.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Fenestra/Fenestra.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 888Q5T53A9;
 				INFOPLIST_FILE = Fenestra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.codingpanda.Fenestra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -552,77 +545,57 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3158CDF1375AACFAF509130 /* Pods-Fenestra.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Fenestra/Fenestra.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 888Q5T53A9;
 				INFOPLIST_FILE = Fenestra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.codingpanda.Fenestra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
-		7C2FD3D71FCB176C00F2372E /* Debug */ = {
+		7CC5401720D69AB400B1B00C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = FenestraLauncher/FenestraLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FenestraTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.codingpanda.FenestraTests;
+				DEVELOPMENT_TEAM = 888Q5T53A9;
+				INFOPLIST_FILE = FenestraLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.codingpanda.FenestraLauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fenestra.app/Contents/MacOS/Fenestra";
 			};
 			name = Debug;
 		};
-		7C2FD3D81FCB176C00F2372E /* Release */ = {
+		7CC5401820D69AB400B1B00C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = FenestraLauncher/FenestraLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FenestraTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.codingpanda.FenestraTests;
+				DEVELOPMENT_TEAM = 888Q5T53A9;
+				INFOPLIST_FILE = FenestraLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.codingpanda.FenestraLauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fenestra.app/Contents/MacOS/Fenestra";
-			};
-			name = Release;
-		};
-		7C2FD3DA1FCB176C00F2372E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FenestraUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.codingpanda.FenestraUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = Fenestra;
-			};
-			name = Debug;
-		};
-		7C2FD3DB1FCB176C00F2372E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = FenestraUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.codingpanda.FenestraUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = Fenestra;
 			};
 			name = Release;
 		};
@@ -647,20 +620,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C2FD3D61FCB176C00F2372E /* Build configuration list for PBXNativeTarget "FenestraTests" */ = {
+		7CC5401920D69AB400B1B00C /* Build configuration list for PBXNativeTarget "FenestraLauncher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7C2FD3D71FCB176C00F2372E /* Debug */,
-				7C2FD3D81FCB176C00F2372E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7C2FD3D91FCB176C00F2372E /* Build configuration list for PBXNativeTarget "FenestraUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7C2FD3DA1FCB176C00F2372E /* Debug */,
-				7C2FD3DB1FCB176C00F2372E /* Release */,
+				7CC5401720D69AB400B1B00C /* Debug */,
+				7CC5401820D69AB400B1B00C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,7 +6,7 @@
 //  Copyright © 2018 CodingPanda. All rights reserved.
 //
 
-import Foundation
+import Foundation;
 
 class GridSelectionCell: Comparable {
 	let rect:NSRect;

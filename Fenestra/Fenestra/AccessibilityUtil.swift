@@ -6,7 +6,7 @@
 //  Copyright © 2018 CodingPanda. All rights reserved.
 //
 
-import Cocoa
+import Cocoa;
 
 struct AccessibilityUtil {
 	static func isTrustedAccessibilityProcess(showPrompt:Bool = false) -> Bool {

@@ -6,7 +6,8 @@
 //  Copyright © 2017 CodingPanda. All rights reserved.
 //
 
-import Cocoa
+import Cocoa;
+import FenestraCommonLib;
 
 class GridSelectionViewController: NSViewController, GridResizeDelegate {
 	@IBOutlet weak var frontmostApplicationName: NSTextField!;
@@ -33,8 +34,8 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 
 	func getSelectionGridSize() -> (numRows: Int, numColumns: Int) {
 		let data=NSUbiquitousKeyValueStore.default.dictionary(forKey: FenestraPreferences.preferences.rawValue);
-		let numberOfRows=data?["numberOfRows"] as? Int ?? 6;
-		let numberOfColumns=data?["numberOfColumns"] as? Int ?? 6;
+		let numberOfRows=data?[FenestraPreferences.numberOfRows.rawValue] as? Int ?? 6;
+		let numberOfColumns=data?[FenestraPreferences.numberOfColumns.rawValue] as? Int ?? 6;
 		return (numberOfRows, numberOfColumns);
 	}
 
@@ -60,22 +61,26 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 			resizeWindow(position: newPosition, size: newSize);
 			// Return focus to the frontmostApplication we've moved (from Fenestra)
 			frontmostApplication?.activate(options: []);
-			NotificationCenter.default.post(name: Notification.Name.fenestraSelectionComplete, object: nil);
+			NotificationCenter.default.post(name: .fenestraSelectionComplete, object: nil);
 		}
 	}
 
 	func resizeWindow(position:CGPoint, size: CGSize) {
 		let pid=frontmostApplication?.processIdentifier;
 		if let pid:pid_t = pid {
-			let focusedWindowAttribute: CFString = kAXFocusedWindowAttribute as CFString
+			let focusedWindowAttribute=kAXFocusedWindowAttribute as CFString
 			let positionAttribute=kAXPositionAttribute as CFString;
 			let sizeAttribute=kAXSizeAttribute as CFString;
 
 			let axApplication=AXUIElementCreateApplication(pid);
 			var frontmostWindow: AnyObject?;
-			AXUIElementCopyAttributeValue(axApplication, focusedWindowAttribute, &frontmostWindow);
-			let frontmostWindowElement=frontmostWindow as! AXUIElement
-			var error = AXUIElementSetAttributeValue(frontmostWindowElement, positionAttribute, AccessibilityUtil.wrapAXValue(position as AnyObject).axValue)
+			var error=AXUIElementCopyAttributeValue(axApplication, focusedWindowAttribute, &frontmostWindow);
+			guard error == .success else {
+				print("Error while getting frontmost application attribute \(error)");
+				return;
+			}
+			let frontmostWindowElement=frontmostWindow as! AXUIElement;
+			error = AXUIElementSetAttributeValue(frontmostWindowElement, positionAttribute, AccessibilityUtil.wrapAXValue(position as AnyObject).axValue)
 			guard error == .success else {
 				print("Error while setting new window position: \(error)");
 				return;
@@ -104,7 +109,7 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 
 	override func viewWillDisappear() {
 		// Ensure any other screen's grid selections are closed
-		NotificationCenter.default.post(name: Notification.Name.fenestraSelectionComplete, object: nil);
+		NotificationCenter.default.post(name: .fenestraSelectionComplete, object: nil);
 		super.viewDidDisappear();
 	}
 	

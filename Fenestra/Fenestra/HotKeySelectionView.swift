@@ -6,8 +6,9 @@
 //  Copyright © 2018 CodingPanda. All rights reserved.
 //
 
-import Cocoa
-import HotKey
+import Cocoa;
+import HotKey;
+import FenestraCommonLib;
 
 public class HotKeySelectionView : NSTextView {
 	var keyCombo:KeyCombo? {

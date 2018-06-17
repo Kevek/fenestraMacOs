@@ -6,9 +6,9 @@
 //  Copyright © 2018 CodingPanda. All rights reserved.
 //
 
-import Foundation
+import Foundation;
 
-extension Sequence where Iterator.Element == String {
+public extension Sequence where Iterator.Element == String {
 	public func intercalate(intercaland:String? = nil) -> String {
 		let intercaland = intercaland ?? ",";
 		return self.reduce("") { (extant, new) in

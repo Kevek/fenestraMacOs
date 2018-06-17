@@ -5,7 +5,7 @@
 //  Created by Kevin Kerr on 5/28/18.
 //
 
-import Cocoa
+import Cocoa;
 
 class GridSelectionView: NSView {
 	var gridResizeDelegate:GridResizeDelegate? {

@@ -6,8 +6,9 @@
 //  Copyright © 2017 CodingPanda. All rights reserved.
 //
 
-import Cocoa
-import HotKey
+import Cocoa;
+import HotKey;
+import FenestraCommonLib;
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -38,6 +39,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	var windows : [NSWindowController?] = [];
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
+		let isLauncherRunning = !NSWorkspace.shared.runningApplications.filter { $0.bundleIdentifier == FenestraPreferences.fenestraLauncherBundleIdentifier.rawValue }.isEmpty;
+
+		if (isLauncherRunning) {
+			DistributedNotificationCenter.default().post(name: .fenestraStopLauncher , object: Bundle.main.bundleIdentifier)
+		}
+
 		// Check if we're authorized for the Accessibility API
 		if (!AccessibilityUtil.isTrustedAccessibilityProcess(showPrompt: true)) {
 			let alert = NSAlert.init();
@@ -52,10 +59,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			statusButton.image = NSImage(named:NSImage.Name("FenestraStatusBarIcon"));
 		}
 
-		NotificationCenter.default.addObserver(forName: Notification.Name.fenestraSelectionComplete, object: nil, queue: nil) { [weak self] (notification) in
+		NotificationCenter.default.addObserver(forName: .fenestraSelectionComplete, object: nil, queue: nil) { [weak self] (notification) in
 			self?.closeGridSelectionWindows();
 		}
-		NotificationCenter.default.addObserver(forName: Notification.Name.fenestraPreferencesOnClosed, object: nil, queue: nil) { 			[weak self] (notification) in
+		NotificationCenter.default.addObserver(forName: .fenestraPreferencesOnClosed, object: nil, queue: nil) { 			[weak self] (notification) in
 			self?.setUpGridSelectionHotKey();
 		}
 
@@ -90,7 +97,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func setUpGridSelectionHotKey() {
 		let data=NSUbiquitousKeyValueStore.default.dictionary(forKey: FenestraPreferences.preferences.rawValue);
-		let keyCombo=KeyCombo(dictionary: (data?["hotkeyCombo"] as? [String: Any] ?? KeyCombo(key: .d, modifiers: [.command, .shift]).dictionary))
+		let keyCombo=KeyCombo(dictionary: (data?[FenestraPreferences.hotkeyCombo.rawValue] as? [String: Any] ?? KeyCombo(key: .d, modifiers: [.command, .shift]).dictionary))
 		openGridSelectionWindowHotKey = HotKey(keyCombo: keyCombo!);
 	}
 

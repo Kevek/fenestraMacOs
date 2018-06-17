@@ -6,9 +6,9 @@
 //  Copyright © 2018 CodingPanda. All rights reserved.
 //
 
-import Cocoa
+import Cocoa;
 
-extension NSColor {
+public extension NSColor {
 	static let fenestraBorderColor = NSColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0);
 	static let fenestraTextColor = NSColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0);
 	static let fenestraBackgroundColor = NSColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.6);
@@ -18,14 +18,23 @@ extension NSColor {
 	static let fenestraSelectedCell = NSColor(red: 0.086, green: 0.60, blue: 1, alpha: 0.67)
 }
 
-extension Notification.Name  {
+public extension Notification.Name  {
 	// Sent when the grid selection is complete
 	static let fenestraSelectionComplete = Notification.Name("fenestraSelectionComplete");
-	// Sent when the settings window is opened or closed (to hook up HotKeys)
-	static let fenestraPreferencesOnOpened = Notification.Name("fenestraPreferencesOnOpen");
+	// Sent when the settings window is closed (to hook up HotKeys)
 	static let fenestraPreferencesOnClosed = Notification.Name("fenestraPreferencesOnClosed");
+	// Sent when the main Fenestra applicaiton starts to close the FenestraLauncher process
+	static let fenestraStopLauncher = Notification.Name("fenestraStopLauncherProcess");
 }
 
-enum FenestraPreferences : String {
+public enum FenestraPreferences : String {
+	case fenestraBundleIdentifier = "net.codingpanda.Fenestra";
+	case fenestraLauncherBundleIdentifier = "net.codingpanda.FenestraLauncher";
+
 	case preferences="fenestraPreferencesUbiquitousKeyValueStore";
+
+	case numberOfRows="numberOfRows";
+	case numberOfColumns="numberOfColumns";
+	case startAtLogin="startAtLogin";
+	case hotkeyCombo="hotkeyCombo";
 }
