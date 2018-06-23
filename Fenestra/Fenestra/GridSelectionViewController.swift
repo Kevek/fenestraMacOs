@@ -33,7 +33,7 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 	}
 
 	func getSelectionGridSize() -> (numRows: Int, numColumns: Int) {
-		let data=NSUbiquitousKeyValueStore.default.dictionary(forKey: FenestraPreferences.preferences.rawValue);
+		let data=UserDefaults.standard.dictionary(forKey: FenestraPreferences.preferences.rawValue);
 		let numberOfRows=data?[FenestraPreferences.numberOfRows.rawValue] as? Int ?? 6;
 		let numberOfColumns=data?[FenestraPreferences.numberOfColumns.rawValue] as? Int ?? 6;
 		return (numberOfRows, numberOfColumns);

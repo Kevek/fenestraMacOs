@@ -96,7 +96,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	func setUpGridSelectionHotKey() {
-		let data=NSUbiquitousKeyValueStore.default.dictionary(forKey: FenestraPreferences.preferences.rawValue);
+		let data=UserDefaults.standard.dictionary(forKey: FenestraPreferences.preferences.rawValue);
 		let keyCombo=KeyCombo(dictionary: (data?[FenestraPreferences.hotkeyCombo.rawValue] as? [String: Any] ?? KeyCombo(key: .d, modifiers: [.command, .shift]).dictionary))
 		openGridSelectionWindowHotKey = HotKey(keyCombo: keyCombo!);
 	}

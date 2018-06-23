@@ -22,7 +22,7 @@ class PreferencesViewController: NSViewController, NSWindowDelegate {
 	override func viewDidLoad() {
 		hotKeySelectionFieldEditor.isFieldEditor=true;
 
-		let data=NSUbiquitousKeyValueStore.default.dictionary(forKey: FenestraPreferences.preferences.rawValue);
+		let data=UserDefaults.standard.dictionary(forKey: FenestraPreferences.preferences.rawValue);
 
 		numberOfRows.stringValue="\(data?[FenestraPreferences.numberOfRows.rawValue] as? Int ?? 6)";
 		numberOfColumns.stringValue="\(data?[FenestraPreferences.numberOfColumns.rawValue] as? Int ?? 6)";
@@ -51,7 +51,7 @@ class PreferencesViewController: NSViewController, NSWindowDelegate {
 		];
 
 		// 1. Save the settings
-		NSUbiquitousKeyValueStore.default.set(data, forKey: FenestraPreferences.preferences.rawValue);
+		UserDefaults.standard.set(data, forKey: FenestraPreferences.preferences.rawValue);
 
 		// 2. Set the Start At Login logic
 		SMLoginItemSetEnabled(FenestraPreferences.fenestraLauncherBundleIdentifier.rawValue as CFString, startAtLogin.state==NSControl.StateValue.on);

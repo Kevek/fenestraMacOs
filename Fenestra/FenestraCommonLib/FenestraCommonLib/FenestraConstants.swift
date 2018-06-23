@@ -31,7 +31,7 @@ public enum FenestraPreferences : String {
 	case fenestraBundleIdentifier = "net.codingpanda.Fenestra";
 	case fenestraLauncherBundleIdentifier = "net.codingpanda.FenestraLauncher";
 
-	case preferences="fenestraPreferencesUbiquitousKeyValueStore";
+	case preferences="fenestraPreferencesUserDefaults";
 
 	case numberOfRows="numberOfRows";
 	case numberOfColumns="numberOfColumns";
