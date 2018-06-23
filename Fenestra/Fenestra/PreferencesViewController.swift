@@ -11,7 +11,7 @@ import HotKey;
 import ServiceManagement;
 import FenestraCommonLib;
 
-class PreferencesViewController: NSViewController, NSWindowDelegate {
+class PreferencesViewController: NSViewController, NSWindowDelegate, NSTextFieldDelegate {
 	@IBOutlet weak var numberOfRows:NSTextField!;
 	@IBOutlet weak var numberOfColumns:NSTextField!;
 	@IBOutlet weak var startAtLogin:NSButton!;
@@ -21,6 +21,12 @@ class PreferencesViewController: NSViewController, NSWindowDelegate {
 
 	override func viewDidLoad() {
 		hotKeySelectionFieldEditor.isFieldEditor=true;
+
+		let integerFormatter=IntegerValueFormatter();
+		numberOfRows.formatter=integerFormatter;
+		numberOfRows.delegate=self;
+		numberOfColumns.formatter=integerFormatter;
+		numberOfColumns.delegate=self;
 
 		let data=UserDefaults.standard.dictionary(forKey: FenestraPreferences.preferences.rawValue);
 
@@ -38,6 +44,17 @@ class PreferencesViewController: NSViewController, NSWindowDelegate {
 			return hotKeySelectionFieldEditor;
 		}
 		return nil;
+	}
+
+	override func controlTextDidChange(_ obj: Notification) {
+		if let textField = obj.object as? NSTextField, (numberOfRows.identifier == textField.identifier || numberOfColumns.identifier == textField.identifier), let intValue = Int(textField.stringValue) {
+			if (intValue < FenestraGridSelectionRange.minValue.rawValue) {
+				textField.stringValue="\(FenestraGridSelectionRange.minValue.rawValue)";
+			}
+			if (intValue > FenestraGridSelectionRange.maxValue.rawValue) {
+				textField.stringValue="\(FenestraGridSelectionRange.maxValue.rawValue)";
+			}
+		}
 	}
 
 	@IBAction func applyButtonClicked(_ sender:Any) {

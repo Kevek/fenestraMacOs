@@ -38,3 +38,8 @@ public enum FenestraPreferences : String {
 	case startAtLogin="startAtLogin";
 	case hotkeyCombo="hotkeyCombo";
 }
+
+public enum FenestraGridSelectionRange : Int {
+	case minValue = 2;
+	case maxValue = 24;
+}
