@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7C162E8820C2022F001E9DF2 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C162E8720C2022F001E9DF2 /* PreferencesViewController.swift */; };
 		7C187A8820BB01E900A2A234 /* AccessibilityUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */; };
-		7C187A8C20BC553B00A2A234 /* GridSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */; };
 		7C187A9020BCCD5C00A2A234 /* GridSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */; };
 		7C2FD3B11FCB176C00F2372E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B01FCB176C00F2372E /* AppDelegate.swift */; };
 		7C2FD3B31FCB176C00F2372E /* GridSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B21FCB176C00F2372E /* GridSelectionViewController.swift */; };
@@ -17,6 +16,7 @@
 		7C2FD3B81FCB176C00F2372E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2FD3B61FCB176C00F2372E /* Main.storyboard */; };
 		7C3123B120BF8B450069A32F /* GridResizeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3123B020BF8B450069A32F /* GridResizeDelegate.swift */; };
 		7C337FE920CC70D3007FBB12 /* HotKeySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C337FE820CC70D2007FBB12 /* HotKeySelectionView.swift */; };
+		7C625D5D2103700F00C1334F /* GridSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C625D5C2103700F00C1334F /* GridSelectionView.swift */; };
 		7C713A1220D6C77B003AFD60 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C713A1020D6C77B003AFD60 /* Preferences.storyboard */; };
 		7C713A1420D71B97003AFD60 /* FenestraCommonLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC5408D20D6B31800B1B00C /* FenestraCommonLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7C7E3D5F20DED4C700BD0A56 /* IntegerValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E3D5E20DED4C700BD0A56 /* IntegerValueFormatter.swift */; };
@@ -67,7 +67,6 @@
 /* Begin PBXFileReference section */
 		7C162E8720C2022F001E9DF2 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityUtil.swift; sourceTree = "<group>"; };
-		7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GridSelectionView.swift; path = /Users/kevek/Development/Git/FenestraMacOs/Fenestra/Fenestra/GridSelectionView.swift; sourceTree = "<absolute>"; };
 		7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSelectionCell.swift; sourceTree = "<group>"; };
 		7C2FD3AD1FCB176C00F2372E /* Fenestra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fenestra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2FD3B01FCB176C00F2372E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		7C2FD3BA1FCB176C00F2372E /* Fenestra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fenestra.entitlements; sourceTree = "<group>"; };
 		7C3123B020BF8B450069A32F /* GridResizeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridResizeDelegate.swift; sourceTree = "<group>"; };
 		7C337FE820CC70D2007FBB12 /* HotKeySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeySelectionView.swift; sourceTree = "<group>"; };
+		7C625D5C2103700F00C1334F /* GridSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridSelectionView.swift; sourceTree = "<group>"; };
 		7C713A1020D6C77B003AFD60 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		7C7E3D5E20DED4C700BD0A56 /* IntegerValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerValueFormatter.swift; sourceTree = "<group>"; };
 		7CC5400A20D69AB200B1B00C /* FenestraLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FenestraLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,21 +149,37 @@
 			isa = PBXGroup;
 			children = (
 				7C2FD3B01FCB176C00F2372E /* AppDelegate.swift */,
-				7C3123B020BF8B450069A32F /* GridResizeDelegate.swift */,
-				7C2FD3B21FCB176C00F2372E /* GridSelectionViewController.swift */,
-				7C187A8B20BC553B00A2A234 /* GridSelectionView.swift */,
-				7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */,
-				7C2FD3B61FCB176C00F2372E /* Main.storyboard */,
-				7C162E8720C2022F001E9DF2 /* PreferencesViewController.swift */,
-				7C7E3D5E20DED4C700BD0A56 /* IntegerValueFormatter.swift */,
-				7C337FE820CC70D2007FBB12 /* HotKeySelectionView.swift */,
-				7C713A1020D6C77B003AFD60 /* Preferences.storyboard */,
+				7C625D5921036F8A00C1334F /* GridSelection */,
+				7C625D5A21036F9000C1334F /* Preferences */,
 				7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */,
 				7C2FD3B41FCB176C00F2372E /* Assets.xcassets */,
 				7C2FD3BA1FCB176C00F2372E /* Fenestra.entitlements */,
 				7C2FD3B91FCB176C00F2372E /* Info.plist */,
 			);
 			path = Fenestra;
+			sourceTree = "<group>";
+		};
+		7C625D5921036F8A00C1334F /* GridSelection */ = {
+			isa = PBXGroup;
+			children = (
+				7C3123B020BF8B450069A32F /* GridResizeDelegate.swift */,
+				7C2FD3B21FCB176C00F2372E /* GridSelectionViewController.swift */,
+				7C187A8F20BCCD5C00A2A234 /* GridSelectionCell.swift */,
+				7C625D5C2103700F00C1334F /* GridSelectionView.swift */,
+				7C2FD3B61FCB176C00F2372E /* Main.storyboard */,
+			);
+			path = GridSelection;
+			sourceTree = "<group>";
+		};
+		7C625D5A21036F9000C1334F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				7C162E8720C2022F001E9DF2 /* PreferencesViewController.swift */,
+				7C7E3D5E20DED4C700BD0A56 /* IntegerValueFormatter.swift */,
+				7C337FE820CC70D2007FBB12 /* HotKeySelectionView.swift */,
+				7C713A1020D6C77B003AFD60 /* Preferences.storyboard */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 		7CC5400B20D69AB200B1B00C /* FenestraLauncher */ = {
@@ -378,10 +394,10 @@
 				7C187A8820BB01E900A2A234 /* AccessibilityUtil.swift in Sources */,
 				7C2FD3B11FCB176C00F2372E /* AppDelegate.swift in Sources */,
 				7C337FE920CC70D3007FBB12 /* HotKeySelectionView.swift in Sources */,
-				7C187A8C20BC553B00A2A234 /* GridSelectionView.swift in Sources */,
 				7C3123B120BF8B450069A32F /* GridResizeDelegate.swift in Sources */,
 				7C187A9020BCCD5C00A2A234 /* GridSelectionCell.swift in Sources */,
 				7C162E8820C2022F001E9DF2 /* PreferencesViewController.swift in Sources */,
+				7C625D5D2103700F00C1334F /* GridSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
