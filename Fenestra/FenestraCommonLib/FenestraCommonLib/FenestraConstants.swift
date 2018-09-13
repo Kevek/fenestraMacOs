@@ -19,10 +19,21 @@ public extension NSColor {
 }
 
 public extension Notification.Name  {
+	// Sent when the grid selection hotkey is pressed
+	static let openFenestraSelection = Notification.Name("openFenestraSelection");
+	static let closeFenestraSelection = Notification.Name("closeFenestraSelection");
 	// Sent when the grid selection is complete
 	static let fenestraSelectionComplete = Notification.Name("fenestraSelectionComplete");
+
+	static let disableFenestraSelectionHotKey = Notification.Name("disableFenestraSelectionHotKey");
+	static let setUpCloseOutstandingSelectionHotKey = Notification.Name("setUpCloseOutstandingSelectionHotKey");
+	static let disableCloseOutstandingSelectionHotKey = Notification.Name("disableCloseOutstandingSelectionHotKey");
+
+	// Sent when the preferences are opened from the StatusBar menu
+	static let fenestraOpenPreferenes = Notification.Name("fenestraOpenPreferenes");
 	// Sent when the settings window is closed (to hook up HotKeys)
 	static let fenestraPreferencesOnClosed = Notification.Name("fenestraPreferencesOnClosed");
+
 	// Sent when the main Fenestra applicaiton starts to close the FenestraLauncher process
 	static let fenestraStopLauncher = Notification.Name("fenestraStopLauncherProcess");
 }

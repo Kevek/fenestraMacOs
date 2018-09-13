@@ -20,6 +20,11 @@
 		7C713A1220D6C77B003AFD60 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C713A1020D6C77B003AFD60 /* Preferences.storyboard */; };
 		7C713A1420D71B97003AFD60 /* FenestraCommonLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC5408D20D6B31800B1B00C /* FenestraCommonLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7C7E3D5F20DED4C700BD0A56 /* IntegerValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7E3D5E20DED4C700BD0A56 /* IntegerValueFormatter.swift */; };
+		7CBEAF3C214900890022C01E /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEAF3B214900890022C01E /* AppComponent.swift */; };
+		7CBEAF42214B274B0022C01E /* GridSelectionAppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEAF41214B274B0022C01E /* GridSelectionAppComponent.swift */; };
+		7CBEAF44214B27570022C01E /* InitializeStatusBarAppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEAF43214B27570022C01E /* InitializeStatusBarAppComponent.swift */; };
+		7CBEAF46214B27670022C01E /* HotkeyAppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEAF45214B27670022C01E /* HotkeyAppComponent.swift */; };
+		7CBEAF48214B27760022C01E /* PreferencesAppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBEAF47214B27760022C01E /* PreferencesAppComponent.swift */; };
 		7CC5400D20D69AB200B1B00C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5400C20D69AB200B1B00C /* AppDelegate.swift */; };
 		7CC5401120D69AB400B1B00C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CC5401020D69AB400B1B00C /* Assets.xcassets */; };
 		7CC5401420D69AB400B1B00C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC5401220D69AB400B1B00C /* Main.storyboard */; };
@@ -80,6 +85,11 @@
 		7C625D5C2103700F00C1334F /* GridSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridSelectionView.swift; sourceTree = "<group>"; };
 		7C713A1020D6C77B003AFD60 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		7C7E3D5E20DED4C700BD0A56 /* IntegerValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerValueFormatter.swift; sourceTree = "<group>"; };
+		7CBEAF3B214900890022C01E /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
+		7CBEAF41214B274B0022C01E /* GridSelectionAppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSelectionAppComponent.swift; sourceTree = "<group>"; };
+		7CBEAF43214B27570022C01E /* InitializeStatusBarAppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeStatusBarAppComponent.swift; sourceTree = "<group>"; };
+		7CBEAF45214B27670022C01E /* HotkeyAppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyAppComponent.swift; sourceTree = "<group>"; };
+		7CBEAF47214B27760022C01E /* PreferencesAppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesAppComponent.swift; sourceTree = "<group>"; };
 		7CC5400A20D69AB200B1B00C /* FenestraLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FenestraLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC5400C20D69AB200B1B00C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CC5401020D69AB400B1B00C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				7C2FD3B01FCB176C00F2372E /* AppDelegate.swift */,
+				7CBEAF40214B270B0022C01E /* AppComponent */,
 				7C625D5921036F8A00C1334F /* GridSelection */,
 				7C625D5A21036F9000C1334F /* Preferences */,
 				7C187A8720BB01E900A2A234 /* AccessibilityUtil.swift */,
@@ -180,6 +191,18 @@
 				7C713A1020D6C77B003AFD60 /* Preferences.storyboard */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		7CBEAF40214B270B0022C01E /* AppComponent */ = {
+			isa = PBXGroup;
+			children = (
+				7CBEAF3B214900890022C01E /* AppComponent.swift */,
+				7CBEAF43214B27570022C01E /* InitializeStatusBarAppComponent.swift */,
+				7CBEAF41214B274B0022C01E /* GridSelectionAppComponent.swift */,
+				7CBEAF45214B27670022C01E /* HotkeyAppComponent.swift */,
+				7CBEAF47214B27760022C01E /* PreferencesAppComponent.swift */,
+			);
+			path = AppComponent;
 			sourceTree = "<group>";
 		};
 		7CC5400B20D69AB200B1B00C /* FenestraLauncher */ = {
@@ -390,14 +413,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C7E3D5F20DED4C700BD0A56 /* IntegerValueFormatter.swift in Sources */,
+				7CBEAF42214B274B0022C01E /* GridSelectionAppComponent.swift in Sources */,
+				7CBEAF3C214900890022C01E /* AppComponent.swift in Sources */,
 				7C2FD3B31FCB176C00F2372E /* GridSelectionViewController.swift in Sources */,
 				7C187A8820BB01E900A2A234 /* AccessibilityUtil.swift in Sources */,
 				7C2FD3B11FCB176C00F2372E /* AppDelegate.swift in Sources */,
 				7C337FE920CC70D3007FBB12 /* HotKeySelectionView.swift in Sources */,
+				7CBEAF44214B27570022C01E /* InitializeStatusBarAppComponent.swift in Sources */,
+				7CBEAF48214B27760022C01E /* PreferencesAppComponent.swift in Sources */,
 				7C3123B120BF8B450069A32F /* GridResizeDelegate.swift in Sources */,
 				7C187A9020BCCD5C00A2A234 /* GridSelectionCell.swift in Sources */,
 				7C162E8820C2022F001E9DF2 /* PreferencesViewController.swift in Sources */,
 				7C625D5D2103700F00C1334F /* GridSelectionView.swift in Sources */,
+				7CBEAF46214B27670022C01E /* HotkeyAppComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

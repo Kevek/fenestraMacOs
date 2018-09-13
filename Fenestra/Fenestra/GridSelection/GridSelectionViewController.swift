@@ -30,6 +30,7 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 		frontmostApplicationName?.textColor=NSColor.fenestraTextColor;
 
 		gridSelectionView.gridResizeDelegate=self;
+		NotificationCenter.default.post(name: .setUpCloseOutstandingSelectionHotKey, object: nil);
 	}
 
 	func getSelectionGridSize() -> (numRows: Int, numColumns: Int) {
@@ -74,20 +75,20 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 
 			let axApplication=AXUIElementCreateApplication(pid);
 			var frontmostWindow: AnyObject?;
-			var error=AXUIElementCopyAttributeValue(axApplication, focusedWindowAttribute, &frontmostWindow);
-			guard error == .success else {
-				print("Error while getting frontmost application attribute \(error)");
+			var result=AXUIElementCopyAttributeValue(axApplication, focusedWindowAttribute, &frontmostWindow);
+			guard result == .success else {
+				print("Error while getting frontmost application attribute \(result.rawValue)");
 				return;
 			}
 			let frontmostWindowElement=frontmostWindow as! AXUIElement;
-			error = AXUIElementSetAttributeValue(frontmostWindowElement, positionAttribute, AccessibilityUtil.wrapAXValue(position as AnyObject).axValue)
-			guard error == .success else {
-				print("Error while setting new window position: \(error)");
+			result = AXUIElementSetAttributeValue(frontmostWindowElement, positionAttribute, AccessibilityUtil.wrapAXValue(position as AnyObject).axValue)
+			guard result == .success else {
+				print("Error while setting new window position: \(result.rawValue)");
 				return;
 			}
-			error=AXUIElementSetAttributeValue(frontmostWindowElement, sizeAttribute, AccessibilityUtil.wrapAXValue(size as AnyObject).axValue)
-			guard error == .success else {
-				print("Error while setting new window size: \(error)");
+			result=AXUIElementSetAttributeValue(frontmostWindowElement, sizeAttribute, AccessibilityUtil.wrapAXValue(size as AnyObject).axValue)
+			guard result == .success else {
+				print("Error while setting new window size: \(result.rawValue)");
 				return;
 			}
 		}
@@ -108,12 +109,7 @@ class GridSelectionViewController: NSViewController, GridResizeDelegate {
 	}
 
 	override func viewWillDisappear() {
-		// Ensure any other screen's grid selections are closed
-		NotificationCenter.default.post(name: .fenestraSelectionComplete, object: nil);
-		super.viewDidDisappear();
-	}
-	
-	deinit {
 		NSWorkspace.shared.notificationCenter.removeObserver(self);
+		super.viewDidDisappear();
 	}
 }
