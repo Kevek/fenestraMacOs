@@ -46,7 +46,7 @@ class PreferencesViewController: NSViewController, NSWindowDelegate, NSTextField
 		return nil;
 	}
 
-	override func controlTextDidChange(_ obj: Notification) {
+	func controlTextDidChange(_ obj: Notification) {
 		if let textField = obj.object as? NSTextField, (numberOfRows.identifier == textField.identifier || numberOfColumns.identifier == textField.identifier), let intValue = Int(textField.stringValue) {
 			if (intValue < FenestraGridSelectionRange.minValue.rawValue) {
 				textField.stringValue="\(FenestraGridSelectionRange.minValue.rawValue)";

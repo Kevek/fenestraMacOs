@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let isLauncherRunning = !NSWorkspace.shared.runningApplications.filter { $0.bundleIdentifier == FenestraPreferences.fenestraLauncherBundleIdentifier.rawValue }.isEmpty;
 
 		if (isLauncherRunning) {
-			DistributedNotificationCenter.default().post(name: .fenestraStopLauncher , object: Bundle.main.bundleIdentifier)
+			DistributedNotificationCenter.default().post(name: .fenestraStopLauncher , object: Bundle.main.bundleIdentifier!)
 		}
 
 		// Check if we're authorized for the Accessibility API
