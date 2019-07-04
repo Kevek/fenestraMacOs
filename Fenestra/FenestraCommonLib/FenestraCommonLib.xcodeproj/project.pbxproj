@@ -101,6 +101,7 @@
 				TargetAttributes = {
 					7CC5407C20D6B31700B1B00C = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -285,7 +286,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.codingpanda.FenestraCommonLib;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -311,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.codingpanda.FenestraCommonLib;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

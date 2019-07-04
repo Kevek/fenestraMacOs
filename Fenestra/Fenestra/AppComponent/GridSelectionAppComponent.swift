@@ -23,9 +23,9 @@ final class GridSelectionAppComponent: AppComponent {
 	func openGridSelectionWindows() {
 		closeGridSelectionWindows();
 		let frontmostApplication=NSWorkspace.shared.frontmostApplication;
-		let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil);
+		let storyboard = NSStoryboard(name: "Main", bundle: nil);
 		for screen in NSScreen.screens {
-			guard let windowController = storyboard.instantiateController(withIdentifier:NSStoryboard.SceneIdentifier("FenestraGridSelectionWindowConroller")) as? NSWindowController else {
+			guard let windowController = storyboard.instantiateController(withIdentifier:"FenestraGridSelectionWindowConroller") as? NSWindowController else {
 				fatalError("Error getting main window controller")
 			}
 			if let gridSelection = windowController.contentViewController as? GridSelectionViewController {

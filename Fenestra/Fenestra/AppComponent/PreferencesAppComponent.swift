@@ -17,8 +17,8 @@ final class PreferencesAppComponent: AppComponent {
 
 	func openPreferences() {
 		NotificationCenter.default.post(name: .disableFenestraSelectionHotKey, object:nil);
-		let storyboard = NSStoryboard(name: NSStoryboard.Name("Preferences"), bundle: nil);
-		guard let windowController = storyboard.instantiateController(withIdentifier:NSStoryboard.SceneIdentifier("FenestraPreferencesWindowController")) as? NSWindowController else {
+		let storyboard = NSStoryboard(name: "Preferences", bundle: nil);
+		guard let windowController = storyboard.instantiateController(withIdentifier:"FenestraPreferencesWindowController") as? NSWindowController else {
 			fatalError("Error getting preferences window controller")
 		}
 		if let settings = windowController.contentViewController as? PreferencesViewController {

@@ -13,7 +13,7 @@ final class InitializeStatusBarAppComponent: AppComponent {
 
 	func doIt() {
 		if let statusButton = statusItem.button {
-			statusButton.image = NSImage(named:NSImage.Name("FenestraStatusBarIcon"));
+			statusButton.image = NSImage(named:"FenestraStatusBarIcon");
 		}
 
 		let statusItemMenu = NSMenu();
