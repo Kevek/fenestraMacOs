@@ -50,7 +50,9 @@ struct AccessibilityUtil {
 				return (true, result);
 			case .illegal:
 				return (false, value);
-			}
+            @unknown default:
+                return (false, value);
+            }
 		default:
 			return (false, value);
 		}
