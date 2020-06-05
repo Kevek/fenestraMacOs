@@ -17,17 +17,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		if (!isFenestraRunning) {
 			DistributedNotificationCenter.default().addObserver(self, selector: #selector(stopLauncher), name: .fenestraStopLauncher, object: FenestraPreferences.fenestraBundleIdentifier.rawValue);
 
-			let path = Bundle.main.bundlePath as NSString;
-			var components = path.pathComponents;
-			components.removeLast();
-			components.removeLast();
-			components.removeLast();
-			components.append("MacOS");
-			components.append("Fenestra")
-
-			let newPath=NSString.path(withComponents: components);
-			NSWorkspace.shared.launchApplication(newPath);
-		} else {
+//			let path = Bundle.main.bundlePath as NSString;
+//			var components = path.pathComponents;
+//			components.removeLast();
+//			components.removeLast();
+//			components.removeLast();
+//			components.append("MacOS");
+//			components.append("Fenestra")
+//           let newPath=NSString.path(withComponents: components);
+//           NSWorkspace.shared.launchApplication(newPath);
+            
+            // https://stackoverflow.com/a/61934094
+            var pathComponents = (Bundle.main.bundlePath as NSString).pathComponents;
+            pathComponents.removeLast();
+            pathComponents.removeLast();
+            pathComponents.removeLast();
+            pathComponents.removeLast();
+            let newPath = NSString.path(withComponents: pathComponents);
+            NSWorkspace.shared.launchApplication(newPath);
+        } else {
 			stopLauncher();
 		}
 	}
