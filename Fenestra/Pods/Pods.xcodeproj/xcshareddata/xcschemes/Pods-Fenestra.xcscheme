@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD7CA7613D1AE9B77775DCDC34F87472"
-               BuildableName = "HotKey.framework"
-               BlueprintName = "HotKey"
+               BlueprintIdentifier = "1FC2F886BD55FE9A4FF26CBBDF2D3EA7"
+               BuildableName = "Pods_Fenestra.framework"
+               BlueprintName = "Pods-Fenestra"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7C2FD3AC1FCB176C00F2372E"
-            BuildableName = "Fenestra.app"
-            BlueprintName = "Fenestra"
-            ReferencedContainer = "container:../Fenestra.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -60,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD7CA7613D1AE9B77775DCDC34F87472"
-            BuildableName = "HotKey.framework"
-            BlueprintName = "HotKey"
+            BlueprintIdentifier = "1FC2F886BD55FE9A4FF26CBBDF2D3EA7"
+            BuildableName = "Pods_Fenestra.framework"
+            BlueprintName = "Pods-Fenestra"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,7 +62,6 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "Fenestra"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

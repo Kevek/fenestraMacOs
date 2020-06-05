@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD7CA7613D1AE9B77775DCDC34F87472"
-               BuildableName = "HotKey.framework"
-               BlueprintName = "HotKey"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "7C2FD3AC1FCB176C00F2372E"
+               BuildableName = "Fenestra.app"
+               BlueprintName = "Fenestra"
+               ReferencedContainer = "container:Fenestra.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "7C2FD3AC1FCB176C00F2372E"
             BuildableName = "Fenestra.app"
             BlueprintName = "Fenestra"
-            ReferencedContainer = "container:../Fenestra.xcodeproj">
+            ReferencedContainer = "container:Fenestra.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -57,22 +57,22 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD7CA7613D1AE9B77775DCDC34F87472"
-            BuildableName = "HotKey.framework"
-            BlueprintName = "HotKey"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "7C2FD3AC1FCB176C00F2372E"
+            BuildableName = "Fenestra.app"
+            BlueprintName = "Fenestra"
+            ReferencedContainer = "container:Fenestra.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "Fenestra"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
