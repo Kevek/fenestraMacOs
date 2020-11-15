@@ -11,12 +11,12 @@ import FenestraCommonLib;
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		let isFenestraRunning = !NSWorkspace.shared.runningApplications.filter { $0.bundleIdentifier==FenestraPreferences.fenestraBundleIdentifier.rawValue }.isEmpty;
-
-		if (!isFenestraRunning) {
-			DistributedNotificationCenter.default().addObserver(self, selector: #selector(stopLauncher), name: .fenestraStopLauncher, object: FenestraPreferences.fenestraBundleIdentifier.rawValue);
-
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let isFenestraRunning = !NSWorkspace.shared.runningApplications.filter { $0.bundleIdentifier==FenestraPreferences.fenestraBundleIdentifier.rawValue }.isEmpty;
+        
+        if (!isFenestraRunning) {
+            DistributedNotificationCenter.default().addObserver(self, selector: #selector(stopLauncher), name: .fenestraStopLauncher, object: FenestraPreferences.fenestraBundleIdentifier.rawValue);
+            
             var pathComponents = (Bundle.main.bundlePath as NSString).pathComponents;
             pathComponents.removeLast();
             pathComponents.removeLast();
@@ -25,12 +25,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let newPath = NSString.path(withComponents: pathComponents);
             NSWorkspace.shared.launchApplication(newPath);
         } else {
-			stopLauncher();
-		}
-	}
-
-	@objc func stopLauncher() {
-		NSApp.terminate(nil);
-	}
+            stopLauncher();
+        }
+    }
+    
+    @objc func stopLauncher() {
+        NSApp.terminate(nil);
+    }
 }
 

@@ -9,16 +9,16 @@
 import Cocoa;
 
 protocol AppComponent {
-	func doIt();
+    func doIt();
 }
 
 final class AppCommandsBuilder {
-	func build() -> [AppComponent] {
-		return [
-			InitializeStatusBarAppComponent(),
-			GridSelectionAppComponent(),
-			HotkeyAppComponent(),
-			PreferencesAppComponent(),
-		];
-	}
+    func build() -> [AppComponent] {
+        return [
+            InitializeStatusBarAppComponent(),
+            GridSelectionAppComponent(),
+            HotkeyAppComponent(),
+            PreferencesAppComponent(),
+        ];
+    }
 }

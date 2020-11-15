@@ -9,7 +9,7 @@
 import Foundation
 
 class IntegerValueFormatter : NumberFormatter {
-	override func	isPartialStringValid(_ partialString: String, newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>?, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
-		return partialString.isEmpty || Int(partialString) != nil;
-	}
+    override func	isPartialStringValid(_ partialString: String, newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>?, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
+        return partialString.isEmpty || Int(partialString) != nil;
+    }
 }

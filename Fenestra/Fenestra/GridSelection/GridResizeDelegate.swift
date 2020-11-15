@@ -7,6 +7,6 @@
 //
 
 protocol GridResizeDelegate {
-	func getSelectionGridSize() -> (numRows:Int, numColumns:Int);
-	func resizeGrid(xOriginPercent:Double, yOriginPercent:Double, screenWidthPercent:Double, screenHeightPercent:Double);
+    func getSelectionGridSize() -> (numRows:Int, numColumns:Int);
+    func resizeGrid(xOriginPercent:Double, yOriginPercent:Double, screenWidthPercent:Double, screenHeightPercent:Double);
 }
